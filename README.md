@@ -41,7 +41,7 @@
    ビルドされた `instructlab:latest` イメージを使って、コンテナをバックグラウンドで起動します：
 
    ```bash
-   podman run -d -p 8000:8000 instructlab:latest
+   podman run -d -p 8000:8000 --name instructlab instructlab:latest
    ```
 
    このコマンドにより、コンテナがバックグラウンドで起動し、ポート `8000` をホストにマッピングして、InstructLabモデルサーバーが実行されます。
@@ -51,7 +51,7 @@
    コンテナが正常に動作しているか確認するために、コンテナのログを表示します：
 
    ```bash
-   podman logs -f <コンテナID>
+   podman logs -f instructlab
    ```
 
    `podman ps` コマンドで実行中のコンテナのIDを確認し、そのIDを `logs` コマンドに置き換えてログを確認します。
